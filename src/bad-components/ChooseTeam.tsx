@@ -11,21 +11,17 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): React.JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
-        if (!team.includes(newMember)) {
-            team.push(newMember);
-        }
-        */
+    function chooseMember(newMember: string): void {
+        setTeam((curr) =>
+            curr.includes(newMember) ? curr : [...curr, newMember],
+        );
     }
 
-    function clearTeam() {
-        /*
-        team = [];
-        */
+    function clearTeam(): void {
+        setTeam([]);
     }
 
     return (
@@ -36,7 +32,12 @@ export function ChooseTeam(): React.JSX.Element {
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                size="sm"
+                                onClick={() => {
+                                    chooseMember(option);
+                                }}
+                            >
                                 {option}
                             </Button>
                         </div>
@@ -47,7 +48,16 @@ export function ChooseTeam(): React.JSX.Element {
                     {team.map((member: string) => (
                         <li key={member}>{member}</li>
                     ))}
-                    <Button onClick={clearTeam}>Clear Team</Button>
+                    <div style={{ marginTop: "8px" }}>
+                        <Button
+                            variant="secondary"
+                            onClick={() => {
+                                clearTeam();
+                            }}
+                        >
+                            Clear Team
+                        </Button>
+                    </div>
                 </Col>
             </Row>
         </div>
