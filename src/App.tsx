@@ -3,9 +3,9 @@ import "./App.css";
 import { Counter } from "./components/Counter";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
-// import { StartAttempt } from "./components/StartAttempt";
-// import { TwoDice } from "./components/TwoDice";
-// import { CycleHoliday } from "./components/CycleHoliday";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
 
 function App(): React.JSX.Element {
     return (
@@ -19,6 +19,12 @@ function App(): React.JSX.Element {
             <ChangeType />
             <hr />
             <RevealAnswer />
+            <hr />
+            <StartAttempt />
+            <hr />
+            <TwoDice />
+            <hr />
+            <CycleHoliday />
             {/* Add the other components here later once you finish them */}
         </div>
     );
