@@ -13,8 +13,8 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript - Courtney Chioma
             </header>
-            <hr />
-            <Counter />
+            <hr></hr>
+            <Counter></Counter>
             <hr />
             <ChangeType />
             <hr />
