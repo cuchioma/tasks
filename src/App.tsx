@@ -6,7 +6,15 @@ import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
-import { Counter } from "./components/Counter";
+
+// ✅ Chapter 10 form-components you just finished
+import { CheckAnswer } from "./form-components/CheckAnswer";
+import { GiveAttempts } from "./form-components/GiveAttempts";
+import { EditMode } from "./form-components/EditMode";
+import { ChangeColor } from "./form-components/ChangeColor";
+import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
+
+// “bad-components” sandbox
 import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
@@ -18,16 +26,23 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript - Courtney Chioma
             </header>
-            <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
-            <hr></hr>
-            <ChooseTeam></ChooseTeam>
-            <hr></hr>
-            <ColoredBox></ColoredBox>
-            <hr></hr>
-            <ShoveBox></ShoveBox>
-            <hr></hr>
-            <Counter></Counter>
+
+            <hr />
+            <CheckAnswer expectedAnswer="yes" />
+            <hr />
+            <GiveAttempts />
+            <hr />
+            <EditMode />
+            <hr />
+            <ChangeColor />
+            <hr />
+            <MultipleChoiceQuestion
+                options={["dog", "cat", "fish"]}
+                expectedAnswer="cat"
+            />
+
+            <hr />
+            <Counter />
             <hr />
             <ChangeType />
             <hr />
@@ -38,7 +53,16 @@ function App(): React.JSX.Element {
             <TwoDice />
             <hr />
             <CycleHoliday />
-            {/* Add the other components here later once you finish them */}
+
+            {/* Sandbox / optional */}
+            <hr />
+            <ChooseTeam />
+            <hr />
+            <ColoredBox />
+            <hr />
+            <ShoveBox />
+            <hr />
+            <DoubleHalf />
         </div>
     );
 }
