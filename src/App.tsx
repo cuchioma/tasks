@@ -1,24 +1,7 @@
 import React from "react";
 import "./App.css";
-import { Counter } from "./components/Counter";
-import { ChangeType } from "./components/ChangeType";
-import { RevealAnswer } from "./components/RevealAnswer";
-import { StartAttempt } from "./components/StartAttempt";
-import { TwoDice } from "./components/TwoDice";
-import { CycleHoliday } from "./components/CycleHoliday";
-
-// ✅ Chapter 10 form-components you just finished
-import { CheckAnswer } from "./form-components/CheckAnswer";
-import { GiveAttempts } from "./form-components/GiveAttempts";
-import { EditMode } from "./form-components/EditMode";
-import { ChangeColor } from "./form-components/ChangeColor";
-import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
-
-// “bad-components” sandbox
-import { DoubleHalf } from "./bad-components/DoubleHalf";
-import { ColoredBox } from "./bad-components/ColoredBox";
-import { ShoveBox } from "./bad-components/ShoveBox";
-import { ChooseTeam } from "./bad-components/ChooseTeam";
+import eagles from "./images/eagles.png";
+import { Container, Row, Col } from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
@@ -28,42 +11,65 @@ function App(): React.JSX.Element {
             </header>
             <p>Hello World</p>
 
-            <hr />
-            <CheckAnswer expectedAnswer="yes" />
-            <hr />
-            <GiveAttempts />
-            <hr />
-            <EditMode />
-            <hr />
-            <ChangeColor />
-            <hr />
-            <MultipleChoiceQuestion
-                options={["dog", "cat", "fish"]}
-                expectedAnswer="cat"
+            <p>
+                Edit <code>src/App.tsx</code> and save. This page will
+                automatically reload.
+            </p>
+
+            <p>Hello World</p>
+            <h1>Task 3</h1>
+
+            <img
+                src={eagles}
+                alt="A picture of eagles logo. Go Birds!"
+                width={240}
             />
 
-            <hr />
-            <Counter />
-            <hr />
-            <ChangeType />
-            <hr />
-            <RevealAnswer />
-            <hr />
-            <StartAttempt />
-            <hr />
-            <TwoDice />
-            <hr />
-            <CycleHoliday />
+            <ul>
+                <li>First Thing</li>
+                <li>Second Thing</li>
+                <li>Third Thing</li>
+            </ul>
 
-            {/* Sandbox / optional */}
-            <hr />
-            <ChooseTeam />
-            <hr />
-            <ColoredBox />
-            <hr />
-            <ShoveBox />
-            <hr />
-            <DoubleHalf />
+            <p>
+                This is <span style={{ color: "red" }}>colored text</span>.
+            </p>
+            <div style={{ border: "1px solid blue", padding: "4px" }}>
+                this will be surrounded by a border and padding.
+            </div>
+
+            <button
+                className="btn btn-primary"
+                type="button"
+                onClick={() => {
+                    console.log("Hello World!");
+                }}
+            >
+                Log Hello World
+            </button>
+
+            <Container className="mt-3">
+                <Row>
+                    <Col>
+                        <div
+                            style={{
+                                width: "100%",
+                                height: "120px",
+                                backgroundColor: "red",
+                            }}
+                        />
+                    </Col>
+                    <Col>
+                        <div
+                            style={{
+                                width: "100%",
+                                height: "120px",
+                                backgroundColor: "red",
+                            }}
+                        />
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }
